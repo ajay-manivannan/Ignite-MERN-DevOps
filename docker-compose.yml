@@ -1,0 +1,25 @@
+version: "3"
+services:
+  database:
+    image: "mongo"
+    container_name: "Ignite_Devops_database"
+    ports:
+      - 27017:27017
+
+  backend:
+    build:
+      context: "./backend"
+    ports:
+      - 3001:3001
+    environment:
+      - DATABASE_URL=mongodb://Ignite_Devops_database
+    depends_on:
+      - database
+
+  frontend:
+    build:
+      context: "./frontend"
+    ports:
+      - 3000:80
+    depends_on:
+      - backend
