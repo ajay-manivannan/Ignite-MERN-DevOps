@@ -14,7 +14,7 @@ function App() {
   }
 
   const handleSend = () => {
-    axios.post("/greetings/", {
+    axios.post("/c/0d19-26d9-49f0-ba73", {
       name: username
     }).then((response)=>{
       setMessage(response.data.message);
