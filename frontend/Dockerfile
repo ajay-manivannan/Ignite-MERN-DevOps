@@ -7,7 +7,7 @@ COPY frontend/package.json /app/
 
 RUN npm i
 
-COPY . .
+COPY frontend/ .
 
 RUN npm run build
 
